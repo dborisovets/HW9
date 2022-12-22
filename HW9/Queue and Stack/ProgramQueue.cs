@@ -19,46 +19,46 @@ namespace HW9.Queue_and_Stack
         private static void Task1()
         {
             Queue<int> queue = new Queue<int>();
-            string value = "0";
+            var _value = "0";
             do
             {
-                value = Console.ReadLine();
-                int result = Int32.Parse(value);
+                _value = Console.ReadLine();
+                int result = Int32.Parse(_value);
                 queue.Enqueue(result);
             }
-            while (!"0".Equals(value));
+            while (!"0".Equals(_value));
 
-            int maxValue = getMaxValue(queue);
+            int _maxValue = getMaxValue(queue);
 
-            Console.WriteLine(maxValue);
+            Console.WriteLine(_maxValue);
 
             queue.Dequeue();
-            maxValue = getMaxValue(queue);
-            Console.WriteLine(maxValue);
+            _maxValue = getMaxValue(queue);
+            Console.WriteLine(_maxValue);
         }
 
         private static int getMaxValue(Queue<int> queueWithInt)
         {
-            int maxValue = Int32.MinValue;
+            int _maxValue = Int32.MinValue;
             foreach (int item in queueWithInt)
             {
-                if (item > maxValue) { maxValue = item; }
+                if (item > _maxValue) { _maxValue = item; }
             }
-            return maxValue;
+            return _maxValue;
         }
 
         private static void Task2()
         {
-            Stack<char> letters = new Stack<char>();
+            Stack<char> _letters = new Stack<char>();
             for (int i = 0; i < 3; i++)
             {
                 string value = Console.ReadLine();
                 char letter = value.ToCharArray()[0];
-                letters.Push(letter);
+                _letters.Push(letter);
             }
             for (int i = 0; i < 3; i++)
             {
-                Console.WriteLine(letters.Pop());
+                Console.WriteLine(_letters.Pop());
             }
         }
     }
