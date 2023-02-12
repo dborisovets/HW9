@@ -18,22 +18,22 @@ namespace HW9.Queue_and_Stack
 
         private static void Task1()
         {
-            Queue<int> queue = new Queue<int>();
+            Queue<int> dasha = new Queue<int>();
             var _value = "0";
             do
             {
                 _value = Console.ReadLine();
                 int result = Int32.Parse(_value);
-                queue.Enqueue(result);
+                dasha.Enqueue(result);
             }
             while (!"0".Equals(_value));
 
-            int _maxValue = getMaxValue(queue);
+            int _maxValue = getMaxValue(dasha);
 
             Console.WriteLine(_maxValue);
 
-            queue.Dequeue();
-            _maxValue = getMaxValue(queue);
+            dasha.Dequeue();
+            _maxValue = getMaxValue(dasha);
             Console.WriteLine(_maxValue);
         }
 

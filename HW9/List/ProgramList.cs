@@ -28,16 +28,16 @@ namespace HW9.List
 
         private static void Task2() => Console.WriteLine($"Numbers: {_wholeNumbers.Count}");
 
-        private static void Task3()
-        {
-            foreach (var str in _words.Where(str => str.Length == 5)) Console.WriteLine(str);
-        }
+        private static void Task3() => _words.Where(str => str.Length == 5).ToList().ForEach(str => Console.WriteLine(str));
 
         private static void Task4()
         {
-            foreach (var selectedWords in from a in _words
-                                          where a.Length == 5
-                                          select a) Console.WriteLine(selectedWords);
+            var selectedWords = _words.Where(word => word.Length == 5);
+
+            foreach (var word in selectedWords)
+            {
+                Console.WriteLine(word);
+            }
         }
     }
 }
